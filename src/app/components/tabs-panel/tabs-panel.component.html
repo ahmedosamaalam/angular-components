@@ -1,0 +1,29 @@
+<div style="height: 500px; width: 500px; background-color: aliceblue;">
+  <ng-template #defaultHeader let-tabs="tabs">
+    <ul
+      class="tab-panel-buttons"
+      style="display: flex; justify-content: space-evenly;"
+      *ngIf="tabs"
+    >
+      <li
+        [ngClass]="{ selected: tab.selected }"
+        (click)="selectTab(tab)"
+        *ngFor="let tab of tabs"
+      >
+        {{ tab.title }}
+      </li>
+    </ul>
+  </ng-template>
+
+  <!-- tabContext will return tabs to let-tabs="tabs" -->
+  <ng-container
+    *ngTemplateOutlet="
+      headerTemplate ? headerTemplate : defaultHeader;
+      context: tabContext
+    "
+  >
+  </ng-container>
+  <!-- <ng-container *ngTemplateOutlet="myCustomHeader?myCustomHeader : defaultHeader"> </ng-container> -->
+
+  <ng-content></ng-content>
+</div>
