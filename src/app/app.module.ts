@@ -7,8 +7,9 @@ import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { TabsPanelComponent } from "./components/tabs-panel/tabs-panel.component";
 import { TabComponent } from "./components/tabs-panel/tab//tab.component";
-import { WebrtcComponent } from './components/webrtc/webrtc.component';
-import { ExportCsvXlsComponent } from './export-csv-xls/export-csv-xls.component';
+import { WebrtcComponent } from "./components/webrtc/webrtc.component";
+
+import { ExportCsvXlxModule } from "./modules/export-csv-xlx/export-csv-xlx.module";
 
 @NgModule({
   declarations: [
@@ -18,9 +19,8 @@ import { ExportCsvXlsComponent } from './export-csv-xls/export-csv-xls.component
     TabsPanelComponent,
     TabComponent,
     WebrtcComponent,
-    ExportCsvXlsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ExportCsvXlxModule],
   providers: [],
   bootstrap: [AppComponent],
 })

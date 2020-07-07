@@ -9,6 +9,7 @@ export class WebrtcComponent implements OnInit {
   constructor() {}
   constraints = {
     video: true,
+    // audio: true
   };
 
   hasGetUserMedia() {
@@ -23,7 +24,6 @@ export class WebrtcComponent implements OnInit {
         console.log("object", stream);
         video.srcObject = stream;
       });
-      // Good to go!
     } else {
       alert("getUserMedia() is not supported by your browser");
     }
